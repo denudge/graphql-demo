@@ -28,6 +28,12 @@ Comments have id, text, timestamp, parent_status, likes_count and user_id as wel
 
 You can find all the relevant code inside app/GraphQL.
 
+## Hint
+
+If you like, make the user's email required in app/GraphQL/Type/UserType.php in line 32
+from 'type' => Type::string() to 'type' => Type::nonNull(Type::string()).
+You still can query for Terrence Hill, but if you ask for an email, this user will not be listed anymore.
+
 Thanks for coming by.
 Have fun.
 
