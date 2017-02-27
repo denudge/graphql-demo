@@ -1,27 +1,33 @@
-# Laravel PHP Framework
+# GraphQL-Demo
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+This is a minimal demo to show how you can query users and comments with GraphQL
+with PHP and Laravel.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+## How to use this
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+Simplest way:
+- Go to ./public
+- Start php -S localhost:8000
+- Open your Browser
+- Navigate to http://localhost:8000/graphql?query={users{name,email,comments{text,likes_count}}}
+- Play around
+- Explore the code
 
-## Official Documentation
+## Available types and fields
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+There are two types:
+- users
+- comments
 
-## Contributing
+You can query comments and use the user to get the author, but also the users and comments within them.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+Users have id, name and email as well as comments for the comment type.
+Comments have id, text, timestamp, parent_status, likes_count and user_id as well as user for the user type.
 
-## Security Vulnerabilities
+## Code
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+You can find all the relevant code inside app/GraphQL.
 
-## License
+Thanks for coming by.
+Have fun.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
