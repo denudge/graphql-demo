@@ -9,7 +9,8 @@ Simplest way:
 - Go to ./public
 - Start php -S localhost:8000
 - Open your Browser
-- Navigate to http://localhost:8000/graphql?query={users{name,email,comments{text,likes_count}}}
+- Make a sample query like http://localhost:8000/graphql?query={users{name,email,comments{text,likes_count}}}
+- Make a sample mutation like http://localhost:8000/graphql?query=mutation+AddComment{AddComment(email:%22john@doe.com%22,text:%22A new comment%22){id,likes_count,timestamp,parent_status,text,user{name,email,id}}}
 - Play around
 - Explore the code
 

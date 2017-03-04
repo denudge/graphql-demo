@@ -60,7 +60,7 @@ return [
             'users' => 'App\GraphQL\Query\UsersQuery',
         ],
         'mutation' => [
-            
+            'AddComment' => 'App\GraphQL\Mutation\AddCommentMutation',
         ]
     ],
     
